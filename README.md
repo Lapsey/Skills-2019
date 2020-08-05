@@ -1,6 +1,6 @@
-<mark>This Project Uses 3-pin ultrasonic Sensors and continuous rotation Servos</mark>
+## This Project Uses 3-pin ultrasonic Sensors and continuous rotation Servos
 
-## Arduino Data pin guide
+### Arduino Data pin guide
 
     * Left Ultrasonic Sensor Ping Pin - 13
     * Left Continuous Rotation Servo PWM Pin - 12
