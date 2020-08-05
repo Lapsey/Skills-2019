@@ -23,7 +23,14 @@ void setup() {
 }
 
 void draw() {
-    Serial.println('This loop does nothing right now');
+    getUSdists();
+
+    if (frontUSDist >= 5) {
+        goForward();
+        keepCenter();
+    } else {
+        stop();
+    }
 }
 
 void initServos() {
@@ -78,4 +85,19 @@ float getRightDist() {
 
 float microsecondsToInches(float microseconds) {
     return microseconds / 74 / 2;
+}
+
+void goForward() {
+    left.write(180);
+    right.write(0);
+}
+
+void stop() {
+    left.write(90);
+    right.write(90);
+}
+
+void keepCenter() {
+    // If positive we are closer to the left wall then the right and vice versa
+    float fromCenter = leftUSDist - rightUSDist;
 }
